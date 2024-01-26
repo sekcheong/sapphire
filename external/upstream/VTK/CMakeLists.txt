@@ -11,19 +11,12 @@ else()
   ExternalProject_Add(VTK_external
     URL
       https://github.com/Kitware/VTK/archive/refs/tags/v9.3.0.tar.gz    
-    DOWNLOAD_NO_PROGRESS
-      1
-    UPDATE_COMMAND
-      ""
-    LOG_CONFIGURE
-      1
-    LOG_BUILD
-      1
-    LOG_INSTALL
-      1
     CMAKE_ARGS
-      -DCMAKE_INSTALL_PREFIX=${STAGED_INSTALL_PREFIX}
-      -DBUILD_TESTS=OFF
+      -DCMAKE_INSTALL_PREFIX=${STAGED_INSTALL_PREFIX}      
+      -DVTK_WRAP_PYTHON=OFF
+      -DVTK_WRAP_JAVA=OFF
+      -DVTK_BUILD_TESTING=OFF      
+      -DBUILD_SHARED_LIBS=OFF
   )
 
   include(GNUInstallDirs)
