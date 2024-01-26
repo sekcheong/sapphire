@@ -10,7 +10,7 @@ else()
   include(ExternalProject)
   ExternalProject_Add(VTK_external
     URL
-      https://github.com/Kitware/VTK/archive/refs/tags/v9.3.0.tar.gz    
+      https://github.com/Kitware/VTK/archive/refs/tags/v9.2.0.tar.gz    
     CMAKE_ARGS
       -DCMAKE_INSTALL_PREFIX=${STAGED_INSTALL_PREFIX}      
       -DVTK_WRAP_PYTHON=OFF
@@ -22,7 +22,7 @@ else()
   include(GNUInstallDirs)
 
   set(
-    VTK_DIR ${STAGED_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/cmake/vtk-9.3
+    VTK_DIR ${STAGED_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/cmake/vtk-9.2
     CACHE PATH "Path to internally built VTKConfig.cmake"
     FORCE
   )
