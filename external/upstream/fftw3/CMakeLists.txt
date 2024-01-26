@@ -36,5 +36,5 @@ else()
     FFTW3_DIR ${STAGED_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/cmake/fftw3
     CACHE PATH "Path to internally built FFTW3Config.cmake"
     FORCE
-    )
+  )
 endif()
