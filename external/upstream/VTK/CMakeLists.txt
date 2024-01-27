@@ -5,7 +5,7 @@ if(VTK_FOUND)
   add_library(VTK_external INTERFACE)
 else()
 
-  message(STATUS "Suitable VTK could not be located. Downloading and building!")
+  message(STATUS "Suitable VTK could not be located. Building from source.")
 
   include(ExternalProject)
   ExternalProject_Add(VTK_external
