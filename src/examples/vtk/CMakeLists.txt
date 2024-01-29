@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.20 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.25)
 
 project(vtk-examples)
 
@@ -14,27 +14,7 @@ message(STATUS "${PROJECT_NAME} staged install: ${STAGED_INSTALL_PREFIX}")
 
 include(ExternalProject)
 
-ExternalProject_Add(${PROJECT_NAME}_core
-  DEPENDS
-    fftw3_external
-  SOURCE_DIR
-    ${CMAKE_CURRENT_LIST_DIR}/fftw3_example
-  CMAKE_ARGS
-    -DFFTW3_DIR=${FFTW3_DIR}
-    -DCMAKE_C_STANDARD=${CMAKE_C_STANDARD}
-    -DCMAKE_C_EXTENSIONS=${CMAKE_C_EXTENSIONS}
-    -DCMAKE_C_STANDARD_REQUIRED=${CMAKE_C_STANDARD_REQUIRED}
-  CMAKE_CACHE_ARGS
-    -DCMAKE_C_FLAGS:STRING=${CMAKE_C_FLAGS}
-    -DCMAKE_PREFIX_PATH:PATH=${CMAKE_PREFIX_PATH}
-  BUILD_ALWAYS
-    1
-  INSTALL_COMMAND
-    ""
-  )
-
-
-ExternalProject_Add(${PROJECT_NAME}_vtk
+ExternalProject_Add(${PROJECT_NAME}_TissueLens
   DEPENDS
     VTK_external
   SOURCE_DIR

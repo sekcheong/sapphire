@@ -1,3 +1,4 @@
+cmake_minimum_required(VERSION 3.25)
 find_package(VTK CONFIG QUIET)
 
 if(VTK_FOUND)  
