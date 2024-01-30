@@ -11,13 +11,14 @@ else()
   include(ExternalProject)
   ExternalProject_Add(ITK_external
     URL
-      https://github.com/InsightSoftwareConsortium/ITK/archive/refs/tags/v5.3.0.tar.gz
+      https://github.com/InsightSoftwareConsortium/ITK/archive/refs/tags/v5.3.0.tar.gz    
     CMAKE_ARGS
       -DCMAKE_INSTALL_PREFIX=${STAGED_INSTALL_PREFIX}        
       -DBUILD_SHARED_LIBS=OFF
       -DBUILD_STATIC_LIBS=ON
       -DBUILD_TESTING=OFF
       -DBUILD_EXAMPLES=OFF
+      -DITK_SKIP_PATH_LENGTH_CHECKS=ON
   )
 
   include(GNUInstallDirs)
