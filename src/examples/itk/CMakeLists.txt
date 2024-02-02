@@ -23,7 +23,7 @@ ExternalProject_Add(${PROJECT_NAME}_test
   DEPENDS
     ITK_external
   SOURCE_DIR
-    ${CMAKE_CURRENT_LIST_DIR}/ITK_test
+    ${CMAKE_CURRENT_LIST_DIR}/itk_test
   CMAKE_ARGS
     -DITK_DIR=${ITK_DIR}
     -DCMAKE_C_STANDARD=${CMAKE_C_STANDARD}

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(vtk_testing)
+project(vtk_test)
 
 find_package(VTK COMPONENTS
   CommonColor
@@ -25,12 +25,10 @@ find_package(ITK REQUIRED)
 
 include(${ITK_USE_FILE})
 
-# Prevent a "command line is too long" failure in Windows.
-set(CMAKE_NINJA_FORCE_RESPONSE_FILE "ON" CACHE BOOL "Force Ninja to use response files.")
+add_executable(vtk_test vtk_test.cpp)
 
-add_executable(TissueLens MACOSX_BUNDLE TissueLens.cpp )
-  target_link_libraries(${PROJECT_NAME} PRIVATE ${VTK_LIBRARIES} ${ITK_LIBRARIES}}
-)
+target_link_libraries(vtk_test PRIVATE ${ITK_LIBRARIES} ${VTK_IBRARIES})
+
 # vtk_module_autoinit is needed
 vtk_module_autoinit(
   TARGETS ${PROJECT_NAME}
