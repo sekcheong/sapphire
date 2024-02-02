@@ -11,7 +11,7 @@ else()
   include(ExternalProject)
   ExternalProject_Add(VTK_external
     URL
-      https://github.com/Kitware/VTK/archive/refs/tags/v9.2.0.tar.gz    
+      https://github.com/Kitware/VTK/archive/refs/tags/v9.2.6.tar.gz
     CMAKE_ARGS
       -DCMAKE_INSTALL_PREFIX=${STAGED_INSTALL_PREFIX}      
       -DVTK_WRAP_PYTHON=OFF
