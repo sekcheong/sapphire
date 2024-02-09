@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.20)
 find_package(ITK CONFIG QUIET)
 
+if (CMAKE_VERSION VERSION_GREATER_EQUAL "3.24.0")
+  cmake_policy(SET CMP0135 NEW)
+endif()
+
 if(ITK_FOUND)  
   message(STATUS "Found ITK version ${ITK_MAJOR_VERSION}.${ITK_MINOR_VERSION}.${ITK_BUILD_VERSION} in ${ITK_DIR}")
   add_library(ITK_external INTERFACE)

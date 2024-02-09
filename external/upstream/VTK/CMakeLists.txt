@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.20)
 find_package(VTK CONFIG QUIET)
 
+if (CMAKE_VERSION VERSION_GREATER_EQUAL "3.24.0")
+  cmake_policy(SET CMP0135 NEW)
+endif()
+
 if(VTK_FOUND)  
   message(STATUS "Found VTK version ${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION}.${VTK_BUILD_VERSION} in ${VTK_DIR}")
   add_library(VTK_external INTERFACE)
