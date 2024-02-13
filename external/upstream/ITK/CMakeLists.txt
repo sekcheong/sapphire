@@ -14,8 +14,10 @@ else()
 
   include(ExternalProject)
   ExternalProject_Add(ITK_external
-    URL
-      https://github.com/InsightSoftwareConsortium/ITK/archive/refs/tags/v5.3.0.tar.gz    
+    GIT_REPOSITORY
+      https://github.com/InsightSoftwareConsortium/ITK.git
+    GIT_TAG      
+      v5.3.0 
     CMAKE_ARGS
       -DCMAKE_INSTALL_PREFIX=${STAGED_INSTALL_PREFIX}        
       -DBUILD_SHARED_LIBS=OFF
