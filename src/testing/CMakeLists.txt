@@ -12,7 +12,6 @@ include(ExternalProject)
 ExternalProject_Add(${PROJECT_NAME}
   DEPENDS
     VTK_external
-    ITK_external    
   SOURCE_DIR
     ${CMAKE_CURRENT_LIST_DIR}/vtk_testing
   CMAKE_ARGS
